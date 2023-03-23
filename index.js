@@ -54,6 +54,15 @@ app.get("/guestbook", (_req, res) => {
   });
 });
 
+// THE NEW ENTRY PAGE
+app.get("/newmessage", function (_req, res) {
+  res.sendFile(__dirname + "/newmessagepage/newmessage.html");
+});
+
+app.get("/ajaxmessage", function (_req, res) {
+  res.send("AJAX ROUTE");
+});
+
 // THE ERROR FUNCTION
 app.get("*", function (_req, res) {
   res.status(404).send("Can't find requested page");
