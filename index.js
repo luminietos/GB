@@ -1,0 +1,65 @@
+// GB SERVER JAVASCRIPT SHIT 23/3/23
+
+const express = require("express");
+const app = express();
+const fs = require("fs");
+const port = 5000;
+
+// THE MAIN, LANDING & DEFAULT PAGE
+app.get("/", function (_req, res) {
+  // redirecting page to index html file
+  res.sendFile(__dirname + "/index.html");
+});
+
+// THE GUESTBOOK PAGE
+app.get("/guestbook", (_req, res) => {
+  fs.readFile("jsondata.json", (err, data) => {
+    if (err) {
+      res.status(500).send("Error loading data");
+      return;
+    }
+
+    const jsonData = JSON.parse(data);
+
+    let results = `
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Country</th>
+            <th>Date</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+    for (let i = 0; i < jsonData.length; i++) {
+      results += `
+        <tr>
+          <td>${jsonData[i].id}</td>
+          <td>${jsonData[i].username}</td>
+          <td>${jsonData[i].country}</td>
+          <td>${jsonData[i].date}</td>
+          <td>${jsonData[i].message}</td>
+        </tr>
+    `;
+    }
+    results += `
+        </tbody>
+      </table>
+    `;
+
+    res.send(results);
+  });
+});
+
+// THE ERROR FUNCTION
+app.get("*", function (_req, res) {
+  res.status(404).send("Can't find requested page");
+});
+
+// PORT
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
