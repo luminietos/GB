@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #d6a95a;
+    color: white;
+  }
+
+  /* the table itself */
+  .tablediv {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  table {
+    table-layout: auto;
+    width: 100%;
+  }
+  th, td {
+    padding: 15px;
+    text-align: center;
+  }

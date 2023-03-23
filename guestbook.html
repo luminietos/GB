@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title> Guestbook </title>
+
     <link rel="stylesheet" href="guestbook.css">
-  </head>
+    <base href="http://localhost:5000/" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- CSS -->
+    <style>
+        
+          body {
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+          }
   
+          .topnav {
+              overflow: hidden;
+              background-color: #333;
+          }
+  
+          .topnav a {
+              float: left;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+          }
+  
+          .topnav a:hover {
+              background-color: #ddd;
+              color: black;
+          }
+  
+          .topnav a.active {
+              background-color: #d6a95a;
+              color: white;
+          }
+  
+          .newentrycontainer {
+              /*NOTE TO SELF: no max. height bc there's also*/
+              /*no max. number of items listed - can be as long as needed!!*/
+              background-color: #d6a95a;
+              
+              margin: auto;
+              text-align: center;
+              align-items: center;
+              
+              min-width: 500px;
+              min-height: 100px;
+  
+              width: 50%;
+              top: 50%;
+              border-radius: 15px;
+  
+              padding-top: 20px;
+              padding-bottom: 30px;
+              padding-left: 20px;
+              padding-right: 20px;
+          }
+      </style>
+  </head>
+
   <body>
+    <div class="topnav">
+      <a href="/" />Home</a>
+      <a href="/guestbook" />Guestbook</a>
+      <a class="active" href="/newmessage" />New Entry</a>
+      <a href="/ajaxpage" />Ajax</a>
+    </div>
+
     <div id="container">
       <h1>Testing Testing</h1>
       <table id="jsondata">
@@ -18,13 +87,85 @@
           </tr>
 
           <tbody id="table-body">
-            
+
           </tbody>
 
         </thead>
       </table>
-  
-      <script src="index.js"></script>
+
+      <script>
+        function showTable(){
+  fetch("./lib/examples/students.json")
+    .then(response => response.json())
+    .then(data => createTable(data));
+}
+    
+function createTable(data) {
+var table = "<table border=1>";
+table += `<tr>
+            <th>Name</th>
+            <th colspan="4">Marks</th>
+          </tr>`;
+table += `<tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Country</th>
+            <th>Date</th>
+            <th>Message</th>
+          </tr>`;
+// now loop through students
+// show their name and marks
+var tr = "";
+for(let i = 0; i < data.result.length; i++) {
+  tr += "<tr>";
+  tr += `<td>${data.result[i].name}</td>`;
+  for (var key in data.result[i].marks) {
+    tr += `<td>${data.result[i].marks[key]}</td>`;
+  }
+  tr += "</tr>"
+}
+table += tr + "</table>";
+
+  // append table to body
+  document.body.innerHTML += table;
+}function showTable(){
+  fetch("./lib/examples/students.json")
+    .then(response => response.json())
+    .then(data => createTable(data));
+}
+    
+function createTable(data) {
+var table = "<table border=1>";
+// add a row for name and marks
+table += `<tr>
+            <th>Name</th>
+            <th colspan="4">Marks</th>
+          </tr>`;
+// now add another row to show subject
+table += `<tr>
+            <th></th>
+            <th>Math</th>
+            <th>English</th>
+            <th>Chemistry</th>
+            <th>Physics</th>
+          </tr>`;
+// now loop through students
+// show their name and marks
+var tr = "";
+for(let i = 0; i < data.result.length; i++) {
+  tr += "<tr>";
+  tr += `<td>${data.result[i].name}</td>`;
+  for (var key in data.result[i].marks) {
+    tr += `<td>${data.result[i].marks[key]}</td>`;
+  }
+  tr += "</tr>"
+}
+table += tr + "</table>";
+
+  // append table to body
+  document.body.innerHTML += table;
+}
+      </script>
     </div>
   </body>
 </html>
