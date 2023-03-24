@@ -56,7 +56,7 @@ app.get("/guestbook", (_req, res) => {
 
 // THE NEW ENTRY PAGE
 app.get("/newmessage", function (_req, res) {
-  res.sendFile(__dirname + "/newmessagepage/newmessage.html");
+  res.sendFile(__dirname + "/newmessage.html");
 });
 
 app.get("/ajaxmessage", function (_req, res) {
