@@ -43,8 +43,6 @@
           }
   
           .newentrycontainer {
-              /*NOTE TO SELF: no max. height bc there's also*/
-              /*no max. number of items listed - can be as long as needed!!*/
               background-color: #d6a95a;
               
               margin: auto;
@@ -92,7 +90,12 @@
 
         </thead>
       </table>
-      <script src="./index.js" type="text/javascript"></script>
+      <script src="./index.js">
+        app.get("/guestbook", function (_req, res) {
+  // redirecting page to index html file
+  res.sendFile(__dirname + "/guestbook.html");
+});
+      </script>
     </div>
   </body>
 </html>

@@ -1,8 +1,7 @@
-// GB SERVER JAVASCRIPT SHIT 23/3/23
-
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const bodyParser = require("body-parser");
 const port = 5000;
 
 // THE MAIN, LANDING & DEFAULT PAGE
@@ -60,6 +59,9 @@ app.get("/newmessage", function (_req, res) {
 });
 
 // SENDING DATA TO JSON FILE
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.post("/submit", function(req, res) {
   var data = req.body;
 
@@ -85,6 +87,7 @@ app.post("/submit", function(req, res) {
   });
 });
 
+// AJAX 
 app.get("/ajaxmessage", function (_req, res) {
   res.send("AJAX ROUTE");
 });
