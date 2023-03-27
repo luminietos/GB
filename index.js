@@ -59,6 +59,32 @@ app.get("/newmessage", function (_req, res) {
   res.sendFile(__dirname + "/newmessage.html");
 });
 
+// SENDING DATA TO JSON FILE
+// app.post("/submit", function(req, res) {
+//   var data = req.body;
+
+//   fs.readFile("jsondata.json", function(err, fileData) {
+//       if (err) {
+//           console.error(err);
+//           res.status(500).send("Error reading data file.");
+//           return;
+//       }
+
+//       var jsonData = JSON.parse(fileData);
+      
+//       jsonData.push(data);
+
+//       fs.writeFile("jsondata.json", JSON.stringify(jsonData), function(err) {
+//           if (err) {
+//               console.error(err);
+//               res.status(500).send("Error");
+//               return;
+//           }
+//           res.send("Data successfully written to file.");
+//       });
+//   });
+// });
+
 app.get("/ajaxmessage", function (_req, res) {
   res.send("AJAX ROUTE");
 });

@@ -15,7 +15,7 @@
         
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'DM Sans', sans-serif;
         }
 
         .topnav {
@@ -64,6 +64,8 @@
             padding-right: 20px;
         }
 
+        /* input field styling */
+
         input[type=text], select {
             width: 100%;
             padding: 12px 20px;
@@ -73,19 +75,19 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-input[type=submit] {
-  width: 100%;
-  background-color: #d6a95a;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-input[type=submit]:hover {
-  background-color: #bc9146;
-}
+        input[type=submit] {
+            width: 100%;
+            background-color: #d6a95a;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+             cursor: pointer;
+            }
+            input[type=submit]:hover {
+                background-color: #bc9146;
+            }
 
     </style>
     </head>
@@ -98,7 +100,7 @@ input[type=submit]:hover {
             <a href="/ajaxpage" />Ajax</a>
         </div>
 
-        <div style="padding-left:16px">
+        <div style="padding-left:16px; padding-top:15px;">
             <h1> Leave a new entry? </h1>
             <hr>
             <h2>Hi! Want to leave a message to our guestbook?</h2>
@@ -114,17 +116,18 @@ input[type=submit]:hover {
             <br />
             <form>
                 <div class="form-group">
-                  <label for="exampleFormControlInput1">Name</label>
-                  <input required type="email" class="form-control" id="exampleFormControlInput1" placeholder="What's your name?">
+                  <label for="name">Name</label>
+                  <input required type="name" class="form-control" id="name" placeholder="What's your name?">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Country</label>
-                    <input required type="email" class="form-control" id="exampleFormControlInput1" placeholder="What's your name?">
+                    <label for="country">Country</label>
+                    <input required type="country" class="form-control" id="country" placeholder="Where are you from?">
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Message</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Leave a message?"></textarea>
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" rows="3"></textarea>
                 </div>
+                <button type="submit" class="btn btn-primary" id="submitBtn">submit</button>
               </form>
               <br />
               <p id="form-date"></p>
@@ -137,6 +140,7 @@ input[type=submit]:hover {
     </body>
 
     <script>
+    // SCRIPT TO SHOW DATE IN FORM
     const date = new Date();
     document.getElementById("form-date").innerHTML = date;
 </script>
