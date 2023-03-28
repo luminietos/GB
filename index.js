@@ -5,12 +5,15 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const port = 5000;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended:false }));
+app.use(bodyParser.json());
 
-// THE MAIN, LANDING & DEFAULT PAGE
+// app.use(express.static(path.join(__dirname, 'public')));
+
+// THE LANDING PAGE
 app.get("/", function (_req, res) {
   // redirecting page to index html file
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 // THE GUESTBOOK PAGE
@@ -28,7 +31,7 @@ app.get("/guestbook", (_req, res) => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Username</th>
+            <th>Name</th>
             <th>Country</th>
             <th>Date</th>
             <th>Message</th>
@@ -56,10 +59,31 @@ app.get("/guestbook", (_req, res) => {
   });
 });
 
-// THE NEW ENTRY PAGE
+// THE NEW ENTRY aka NEW MESSAGE PAGE
 app.get("/newmessage", function (_req, res) {
   res.sendFile(__dirname + "/newmessage.html");
 });
+
+// handles the post request
+app.post("/newmessage", function (req, res) {
+  const formData = req.body;
+  fs.readFile("jsondata.json", function (err, data) {
+    
+    if (err) throw err;
+
+    const entries = JSON.parse(data);
+    entries.push(formData);
+    
+    // writing form data to file
+    fs.writeFile("jsondata.json", JSON.stringify(entries), function (err) {
+      if (err) throw err;
+      console.log("New entry added to data.json");
+      res.redirect("/guestbook");
+    });
+  });
+});
+
+
 
 // SENDING DATA TO JSON FILE
 // app.use(bodyParser.urlencoded({ extended: true }));

@@ -78,7 +78,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Username</th>
             <th>Country</th>
             <th>Date</th>
             <th>Message</th>
@@ -91,44 +91,45 @@
         </thead>
       </table>
       <script>
-//retrieving the updated JSON data from the server
-// Load JSON data
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        // Parse JSON data
-        var jsonData = JSON.parse(this.responseText);
+        
+// //retrieving the updated JSON data from the server
+// // Load JSON data
+// var xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         // Parse JSON data
+//         var jsonData = JSON.parse(this.responseText);
 
-        // Get table element
-        var table = document.getElementById("mytable");
+//         // Get table element
+//         var table = document.getElementById("jsondata");
 
-        // Clear existing table rows
-        table.innerHTML = "";
+//         // Clear existing table rows
+//         table.innerHTML = "";
 
-        // Iterate over JSON data and create table rows and cells
-        for (var i = 0; i < jsonData.length; i++) {
-            var row = document.createElement("tr");
-            var nameCell = document.createElement("td");
-            var countryCell = document.createElement("td");
-            var messageCell = document.createElement("td");
+//         // Iterate over JSON data and create table rows and cells
+//         for (var i = 0; i < jsonData.length; i++) {
+//             var row = document.createElement("tr");
+//             var nameCell = document.createElement("td");
+//             var countryCell = document.createElement("td");
+//             var messageCell = document.createElement("td");
 
-            // Set cell text
-            nameCell.innerHTML = jsonData[i].name;
-            countryCell.innerHTML = jsonData[i].country;
-            messageCell.innerHTML = jsonData[i].message;
+//             // Set cell text
+//             nameCell.innerHTML = jsonData[i].name;
+//             countryCell.innerHTML = jsonData[i].country;
+//             messageCell.innerHTML = jsonData[i].message;
 
-            // Add cells to row
-            row.appendChild(nameCell);
-            row.appendChild(countryCell);
-            row.appendChild(messageCell);
+//             // Add cells to row
+//             row.appendChild(nameCell);
+//             row.appendChild(countryCell);
+//             row.appendChild(messageCell);
 
-            // Add row to table
-            table.appendChild(row);
-        }
-    }
-};
-xhttp.open("GET", "jsondata.json", true);
-xhttp.send();
+//             // Add row to table
+//             table.appendChild(row);
+//         }
+//     }
+// };
+// xhttp.open("GET", "jsondata.json", true);
+// xhttp.send();
       </script>
     </div>
   </body>
