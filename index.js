@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const bodyParser = require("body-parser");
+const path = require('path');
 const port = 5000;
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // THE MAIN, LANDING & DEFAULT PAGE
 app.get("/", function (_req, res) {
   // redirecting page to index html file
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // THE GUESTBOOK PAGE
@@ -59,33 +62,33 @@ app.get("/newmessage", function (_req, res) {
 });
 
 // SENDING DATA TO JSON FILE
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 
-app.post("/submit", function(req, res) {
-  var data = req.body;
+// app.post("/submit", function(req, res) {
+//   var data = req.body;
 
-  fs.readFile("jsondata.json", function(err, fileData) {
-      if (err) {
-          console.error(err);
-          res.status(500).send("Error reading data file.");
-          return;
-      }
+//   fs.readFile("jsondata.json", function(err, fileData) {
+//       if (err) {
+//           console.error(err);
+//           res.status(500).send("Error reading data file.");
+//           return;
+//       }
 
-      var jsonData = JSON.parse(fileData);
+//       var jsonData = JSON.parse(fileData);
       
-      jsonData.push(data);
+//       jsonData.push(data);
 
-      fs.writeFile("jsondata.json", JSON.stringify(jsonData), function(err) {
-          if (err) {
-              console.error(err);
-              res.status(500).send("Error");
-              return;
-          }
-          res.send("Data successfully written to file.");
-      });
-  });
-});
+//       fs.writeFile("jsondata.json", JSON.stringify(jsonData), function(err) {
+//           if (err) {
+//               console.error(err);
+//               res.status(500).send("Error");
+//               return;
+//           }
+//           res.send("Data successfully written to file.");
+//       });
+//   });
+// });
 
 // AJAX 
 app.get("/ajaxmessage", function (_req, res) {

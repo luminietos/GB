@@ -61,7 +61,7 @@
               padding-left: 20px;
               padding-right: 20px;
           }
-      </style>
+    </style>
   </head>
 
   <body>
@@ -90,11 +90,45 @@
 
         </thead>
       </table>
-      <script src="./index.js">
-        app.get("/guestbook", function (_req, res) {
-  // redirecting page to index html file
-  res.sendFile(__dirname + "/guestbook.html");
-});
+      <script>
+//retrieving the updated JSON data from the server
+// Load JSON data
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // Parse JSON data
+        var jsonData = JSON.parse(this.responseText);
+
+        // Get table element
+        var table = document.getElementById("mytable");
+
+        // Clear existing table rows
+        table.innerHTML = "";
+
+        // Iterate over JSON data and create table rows and cells
+        for (var i = 0; i < jsonData.length; i++) {
+            var row = document.createElement("tr");
+            var nameCell = document.createElement("td");
+            var countryCell = document.createElement("td");
+            var messageCell = document.createElement("td");
+
+            // Set cell text
+            nameCell.innerHTML = jsonData[i].name;
+            countryCell.innerHTML = jsonData[i].country;
+            messageCell.innerHTML = jsonData[i].message;
+
+            // Add cells to row
+            row.appendChild(nameCell);
+            row.appendChild(countryCell);
+            row.appendChild(messageCell);
+
+            // Add row to table
+            table.appendChild(row);
+        }
+    }
+};
+xhttp.open("GET", "jsondata.json", true);
+xhttp.send();
       </script>
     </div>
   </body>
