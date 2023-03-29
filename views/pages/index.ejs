@@ -1,3 +1,4 @@
+<!-- THE GUESTBOOK PAGE, DISPLAYS THE TABLE -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,6 +7,12 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/guestbook.css">
+    <!-- PureCSS -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+      integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+      crossorigin="anonymous">
+
     <!-- PORT -->
     <base href="http://localhost:5000/" />
 
@@ -18,30 +25,39 @@
       <a class="active" href="/guestbook" />Guestbook</a>
       <a href="/newmessage" />New Entry</a>
       <a href="/ajaxpage" />Ajax</a>
-
     </div>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Country</th>
-            <th>Date</th>
-            <th>Message</th>
-          </tr>
-        </thead>
-        <tbody>
-    <% for (let i = 0; i < data.length; i++) { %>
+    <div style="padding-left:16px; padding-top:15px;">
+      <h1> Guestbook </h1>
+      <h2>View messages left by past visitors.</h2>
+    </div>
+    <table class="pure-table pure-table-bordered">
+      <thead>
         <tr>
-          <td><%=data[i].id %></td>
-          <td><%=data[i].username %></td>
-          <td><%=data[i].country %></td>
-          <td><%=data[i].date %></td>
-          <td><%=data[i].message %></td>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Country</th>
+          <th>Date</th>
+          <th>Message</th>
         </tr>
-    <% } %>
-        </tbody>
-    </table>
+      </thead>
+      <tbody>
+        <% for (let i= 0; i <data.length; i++) { %>
+          <tr>
+            <td><%=data[i].id %></td>
+              <td><%=data[i].username %></td>
+                <td><%=data[i].country %></td>
+                  <td><%=data[i].date %></td>
+                    <td><%=data[i].message %></td>
+                    </tr>
+                    <% } %>
+                    </tbody>
+                  </table>
+                </div>
+
+    <div style="padding-left:16px; padding-top:15px;">
+        <h3>Want to leave a message of your own to our guestbook?</h3>
+        <p>You can find our message entry form in
+        <a href="./newmessage" /> the New Entry page</a>.</p>
     </div>
   </body>
 </html>

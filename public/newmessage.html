@@ -10,89 +10,11 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <!-- CSS -->
+        <link rel="stylesheet" href="css/guestbook.css">
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous">
-        <style>
-        
-        body {
-            margin: 0;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        .topnav {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        .topnav a {
-            float: left;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .topnav a.active {
-            background-color: #d6a95a;
-            color: white;
-        }
-
-        .newentrycontainer {
-            /*NOTE TO SELF: no max. height bc there's also*/
-            /*no max. number of items listed - can be as long as needed!!*/
-            background-color: #ffefcc;
-            
-            margin: auto;
-            text-align: center;
-            align-items: center;
-            
-            min-width: 500px;
-            min-height: 100px;
-
-            width: 50%;
-            top: 50%;
-            border-radius: 15px;
-
-            padding-top: 20px;
-            padding-bottom: 30px;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        /* input field styling */
-
-        input[type=text], select {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type=submit] {
-            width: 100%;
-            background-color: #d6a95a;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-             cursor: pointer;
-            }
-            input[type=submit]:hover {
-                background-color: #bc9146;
-            }
-
-    </style>
     </head>
 
     <body>
@@ -108,7 +30,7 @@
             <hr>
             <h2>Hi! Want to leave a message to our guestbook?</h2>
             <p>Type your message down below, and hit send to see your message in
-                <a href="/guestbook" />the Guestbook
+                <a href="./guestbook" />the Guestbook
                     page</a>.</p>
         </div>
         <br />
@@ -121,15 +43,18 @@
             <form action="/newmessage" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="What's your name?">
+                    <input type="text" class="form-control" id="username"
+                        name="username" placeholder="What's your name?">
                 </div>
                 <div class="form-group">
                     <label for="country">Country</label>
-                    <input type="text" class="form-control" id="country" name="country" placeholder="Where are you from?">
+                    <input type="text" class="form-control" id="country"
+                        name="country" placeholder="Where are you from?">
                 </div>
                 <div class="form-group">
                     <label for="message" class="form-label">Message</label>
-                    <textarea required name="message" class="form-control" id="message"
+                    <textarea required name="message" class="form-control"
+                        id="message"
                         rows="3"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

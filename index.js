@@ -11,8 +11,7 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(bodyParser.json());
 
-// app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static("public"));  //better and newer way than first answer
+app.use(express.static("public"));
 
 
 // THE LANDING PAGE
@@ -62,37 +61,6 @@ app.post("/newmessage", function (req, res) {
     });
   });
 });
-
-
-
-// SENDING DATA TO JSON FILE
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-
-// app.post("/submit", function(req, res) {
-//   var data = req.body;
-
-//   fs.readFile("jsondata.json", function(err, fileData) {
-//       if (err) {
-//           console.error(err);
-//           res.status(500).send("Error reading data file.");
-//           return;
-//       }
-
-//       var jsonData = JSON.parse(fileData);
-      
-//       jsonData.push(data);
-
-//       fs.writeFile("jsondata.json", JSON.stringify(jsonData), function(err) {
-//           if (err) {
-//               console.error(err);
-//               res.status(500).send("Error");
-//               return;
-//           }
-//           res.send("Data successfully written to file.");
-//       });
-//   });
-// });
 
 // AJAX 
 app.get("/ajaxmessage", function (_req, res) {
