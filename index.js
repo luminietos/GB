@@ -18,11 +18,11 @@ app.use(express.static("public"));  //better and newer way than first answer
 // THE LANDING PAGE
 app.get("/", function (_req, res) {
   // redirecting page to index html file
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 // THE GUESTBOOK PAGE
-app.get("./guestbook", (_req, res) => {
+app.get("/guestbook", (_req, res) => {
   fs.readFile("jsondata.json", (err, data) => {
     if (err) {
       res.status(500).send("Error loading data");
@@ -41,7 +41,7 @@ app.get("./guestbook", (_req, res) => {
 
 // THE NEW ENTRY aka NEW MESSAGE PAGE
 app.get("/newmessage", function (_req, res) {
-  res.sendFile(__dirname + "./newmessage.html");
+  res.sendFile(__dirname + "/public/newmessage.html");
 });
 
 // handles the post request
@@ -58,7 +58,7 @@ app.post("/newmessage", function (req, res) {
     fs.writeFile("jsondata.json", JSON.stringify(entries), function (err) {
       if (err) throw err;
       console.log("New entry added to data.json");
-      res.redirect("/guestbook");
+      res.redirect("/public/guestbook");
     });
   });
 });
