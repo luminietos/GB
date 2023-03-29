@@ -5,12 +5,15 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const port = 5000;
 
+// FOR EJS
 app.set("view engine","ejs");
 
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(bodyParser.json());
 
 // app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static("public"));  //better and newer way than first answer
+
 
 // THE LANDING PAGE
 app.get("/", function (_req, res) {
@@ -19,7 +22,7 @@ app.get("/", function (_req, res) {
 });
 
 // THE GUESTBOOK PAGE
-app.get("/guestbook", (_req, res) => {
+app.get("./guestbook", (_req, res) => {
   fs.readFile("jsondata.json", (err, data) => {
     if (err) {
       res.status(500).send("Error loading data");
@@ -30,46 +33,15 @@ app.get("/guestbook", (_req, res) => {
 
     var tableData = {
       data: jsonData,
-    };
-    res.render("/index",tableData);
-    // res.send(result);
-
-    // let results = `
-    //   <table class="table table-striped">
-    //     <thead>
-    //       <tr>
-    //         <th>ID</th>
-    //         <th>Name</th>
-    //         <th>Country</th>
-    //         <th>Date</th>
-    //         <th>Message</th>
-    //       </tr>
-    //     </thead>
-    //     <tbody>
-    // `;
-    // for (let i = 0; i < jsonData.length; i++) {
-    //   results += `
-    //     <tr>
-    //       <td>${jsonData[i].id}</td>
-    //       <td>${jsonData[i].username}</td>
-    //       <td>${jsonData[i].country}</td>
-    //       <td>${jsonData[i].date}</td>
-    //       <td>${jsonData[i].message}</td>
-    //     </tr>
-    // `;
-    // }
-    // results += `
-    //     </tbody>
-    //   </table>
-    // `;
-
-    // res.send(results);
+  };
+    res.render("./pages/index",tableData);
+    //res.send(results);
   });
 });
 
 // THE NEW ENTRY aka NEW MESSAGE PAGE
 app.get("/newmessage", function (_req, res) {
-  res.sendFile(__dirname + "/newmessage.html");
+  res.sendFile(__dirname + "./newmessage.html");
 });
 
 // handles the post request

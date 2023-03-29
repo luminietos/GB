@@ -4,132 +4,14 @@
     <meta charset="utf-8">
     <title> Guestbook </title>
 
-    <link rel="stylesheet" href="guestbook.css">
+    <link rel="stylesheet" type="text/css" href="guestbook.css">
     <base href="http://localhost:5000/" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <!-- CSS -->
-    <style>
-          body {
-              margin: 0;
-              font-family: 'DM Sans', sans-serif;
-          }
-  
-          .topnav {
-              overflow: hidden;
-              background-color: #333;
-          }
-  
-          .topnav a {
-              float: left;
-              color: #f2f2f2;
-              text-align: center;
-              padding: 14px 16px;
-              text-decoration: none;
-              font-size: 17px;
-          }
-  
-          .topnav a:hover {
-              background-color: #ddd;
-              color: black;
-          }
-  
-          .topnav a.active {
-              background-color: #d6a95a;
-              color: white;
-          }
-  
-          .newentrycontainer {
-              background-color: #d6a95a;
-              
-              margin: auto;
-              text-align: center;
-              align-items: center;
-              
-              min-width: 500px;
-              min-height: 100px;
-  
-              width: 50%;
-              top: 50%;
-              border-radius: 15px;
-  
-              padding-top: 20px;
-              padding-bottom: 30px;
-              padding-left: 20px;
-              padding-right: 20px;
-          }
-    </style>
   </head>
 
   <body>
-    <div class="topnav">
-      <a href="/" />Home</a>
-      <a href="/guestbook" />Guestbook</a>
-      <a class="active" href="/newmessage" />New Entry</a>
-      <a href="/ajaxpage" />Ajax</a>
-    </div>
-
-    <div id="container">
-      <h1>Testing Testing</h1>
-      <table id="jsondata">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Country</th>
-            <th>Date</th>
-            <th>Message</th>
-          </tr>
-
-          <tbody id="table-body">
-
-          </tbody>
-
-        </thead>
-      </table>
-      <script>
-        
-// //retrieving the updated JSON data from the server
-// // Load JSON data
-// var xhttp = new XMLHttpRequest();
-// xhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//         // Parse JSON data
-//         var jsonData = JSON.parse(this.responseText);
-
-//         // Get table element
-//         var table = document.getElementById("jsondata");
-
-//         // Clear existing table rows
-//         table.innerHTML = "";
-
-//         // Iterate over JSON data and create table rows and cells
-//         for (var i = 0; i < jsonData.length; i++) {
-//             var row = document.createElement("tr");
-//             var nameCell = document.createElement("td");
-//             var countryCell = document.createElement("td");
-//             var messageCell = document.createElement("td");
-
-//             // Set cell text
-//             nameCell.innerHTML = jsonData[i].name;
-//             countryCell.innerHTML = jsonData[i].country;
-//             messageCell.innerHTML = jsonData[i].message;
-
-//             // Add cells to row
-//             row.appendChild(nameCell);
-//             row.appendChild(countryCell);
-//             row.appendChild(messageCell);
-
-//             // Add row to table
-//             table.appendChild(row);
-//         }
-//     }
-// };
-// xhttp.open("GET", "jsondata.json", true);
-// xhttp.send();
-      </script>
-    </div>
   </body>
+  <script src="/index.ejs"></script>
 </html>
