@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const port = 5000;
 
+app.set("view engine","ejs");
+
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(bodyParser.json());
 
@@ -26,36 +28,42 @@ app.get("/guestbook", (_req, res) => {
 
     const jsonData = JSON.parse(data);
 
-    let results = `
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Country</th>
-            <th>Date</th>
-            <th>Message</th>
-          </tr>
-        </thead>
-        <tbody>
-    `;
-    for (let i = 0; i < jsonData.length; i++) {
-      results += `
-        <tr>
-          <td>${jsonData[i].id}</td>
-          <td>${jsonData[i].username}</td>
-          <td>${jsonData[i].country}</td>
-          <td>${jsonData[i].date}</td>
-          <td>${jsonData[i].message}</td>
-        </tr>
-    `;
-    }
-    results += `
-        </tbody>
-      </table>
-    `;
+    var tableData = {
+      data: jsonData,
+    };
+    res.render("/index",tableData);
+    // res.send(result);
 
-    res.send(results);
+    // let results = `
+    //   <table class="table table-striped">
+    //     <thead>
+    //       <tr>
+    //         <th>ID</th>
+    //         <th>Name</th>
+    //         <th>Country</th>
+    //         <th>Date</th>
+    //         <th>Message</th>
+    //       </tr>
+    //     </thead>
+    //     <tbody>
+    // `;
+    // for (let i = 0; i < jsonData.length; i++) {
+    //   results += `
+    //     <tr>
+    //       <td>${jsonData[i].id}</td>
+    //       <td>${jsonData[i].username}</td>
+    //       <td>${jsonData[i].country}</td>
+    //       <td>${jsonData[i].date}</td>
+    //       <td>${jsonData[i].message}</td>
+    //     </tr>
+    // `;
+    // }
+    // results += `
+    //     </tbody>
+    //   </table>
+    // `;
+
+    // res.send(results);
   });
 });
 
