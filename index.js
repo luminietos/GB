@@ -45,11 +45,13 @@ app.get("/newmessage", function (_req, res) {
 
 // handles the post request
 app.post("/newmessage", function (req, res) {
+  // adding the current date to formData
   const formData = req.body;
+  formData.date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long"});
+  
   fs.readFile("jsondata.json", function (err, data) {
-    
     if (err) throw err;
-
+    
     const entries = JSON.parse(data);
     entries.push(formData);
     
@@ -57,14 +59,17 @@ app.post("/newmessage", function (req, res) {
     fs.writeFile("jsondata.json", JSON.stringify(entries), function (err) {
       if (err) throw err;
       console.log("New entry added to data.json");
-      res.redirect("/public/guestbook");
+      
+      //after the user's sent their message...
+      res.redirect("/guestbook");
     });
   });
 });
 
-// AJAX 
+
+// THE AJAX MESSAGE PAGE 
 app.get("/ajaxmessage", function (_req, res) {
-  res.send("AJAX ROUTE");
+  res.sendFile(__dirname + "/public/ajaxmessage.html");
 });
 
 // THE ERROR FUNCTION
