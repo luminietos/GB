@@ -45,9 +45,16 @@ app.get("/newmessage", function (_req, res) {
 
 // handles the post request
 app.post("/newmessage", function (req, res) {
-  // adding the current date to formData
   const formData = req.body;
-  formData.date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long"});
+
+  // adding the current date to formData & formatting it
+  const options = { 
+    weekday:"long", 
+    year:"numeric", 
+    month:"long", 
+    hour:"numeric", 
+    minute:"numeric" };
+  formData.date = new Date().toLocaleDateString('en-us', options);
   
   fs.readFile("jsondata.json", function (err, data) {
     if (err) throw err;

@@ -25,7 +25,7 @@
             <a class="active" href="/ajaxmessage" />Ajax</a>
         </div>
         
-        <div id="header">
+        <div id="title">
             <h1> AJAX Entry Form </h1>
             <hr>
             <h2> Want to leave a message to the backend?</h2>
@@ -40,7 +40,7 @@
             <hr>
             <br />
 
-            <form>
+            <form id="ajax-form">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="username"
@@ -57,8 +57,9 @@
                         id="message"
                         rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
             </form>
+            <div id="message-container"></div>
             <br />
         </div>
 
@@ -76,5 +77,45 @@
             crossorigin="anonymous"></script>
     </body>
 
-    <script></script>
+    <script>
+// selects the form and message container elements
+const form = document.getElementById('ajax-form');
+const messageContainer = document.getElementById('message-container');
+
+// adds event listener for the form submit event
+form.addEventListener('submit', function(event) {
+  // prevents the default form submission behavior
+  event.preventDefault();
+
+  // collects the form data
+  const formData = new FormData(form);
+
+  // creates a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
+
+  // sets up the request
+  xhr.open('POST', '/public/ajaxmessage.html');
+
+  // handles the response
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        // parses the response JSON and display it in the message container
+        const response = JSON.parse(xhr.responseText);
+        messageContainer.textContent = response.message;
+      } else {
+        messageContainer.textContent = 'An error occurred.';
+      }
+    }
+  }
+
+  // sends the request
+  xhr.send(JSON.stringify({
+    username: formData.get('username'),
+    country: formData.get('country'),
+    message: formData.get('message')
+  }));
+});
+
+    </script>
 </html>

@@ -25,6 +25,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
   <body>
+    <header>
+      <!-- HEADER HERE -->
+    </header>
+      
     <div class="topnav">
       <a href="/" />Home</a>
       <a class="active" href="/guestbook" />Guestbook</a>
@@ -32,18 +36,18 @@
       <a href="/ajaxmessage" />Ajax</a>
     </div>
 
-    <div id="header">
+    <div id="title">
       <h1> Guestbook </h1>
       <hr>
       <h2>View messages left by past visitors.</h2>
-      <p>If you want to leave a message of your own, you can find our message entry form in
+      <p id="alt-text">If you want to leave a message of your own, you can find our message entry form in
         <a href="./newmessage" /> the New Entry page</a>.</p>
     </div>
 
-    <table class="pure-table pure-table-bordered" id="tablediv">
+    <table class="pure-table pure-table-horizontal" id="tablediv">
       <thead>
         <tr class="text-center">
-          <th>ID</th>
+          <!-- <th>ID</th> -->
           <th>Username</th>
           <th>Country</th>
           <th>Date</th>
@@ -53,7 +57,7 @@
       <tbody>
         <% for (let i= 0; i <data.length; i++) { %>
           <tr>
-            <td><%=data[i].id %></td>
+            <!-- <td><%=data[i].id %></td> -->
               <td><%=data[i].username %></td>
                 <td><%=data[i].country %></td>
                   <td><%=data[i].date %></td>

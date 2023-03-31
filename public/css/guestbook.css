@@ -3,10 +3,19 @@ body {
   font-family: 'DM Sans', sans-serif;
   padding-bottom: 50px;
 }
+#paddingstuff {
+  padding:20px;
+}
 
 /* TEXT */
 
-#header {
+#fancy {
+  font-family: 'Fasthand', cursive;
+  padding-right: 5px;
+  font-size: 50px;
+}
+
+#title {
   padding-left:16px; 
   padding-top:15px;
 }
@@ -28,7 +37,7 @@ img {
   /* sizing */ 
   margin-right: 15px;
   width: 15cm;
-  height: 10cm;
+  height: 15cm;
 }
 
 /* NAVBAR */
@@ -46,7 +55,7 @@ img {
   font-size: 17px;
 }
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #f2f2f2;
   color: black;
 }
 .topnav a.active {
@@ -54,9 +63,8 @@ img {
   color: white;
 }
 
-/* THE GUESTBOOK TABLE */
+/* THE TABLE */
 
-/* the guestbook table itself */
 #tablediv {
   margin-left:auto;
   margin-right:auto;
@@ -67,12 +75,47 @@ img {
 table {
   table-layout: auto;
   width: 100%;
+  border: none; 
+  border-collapse: collapse; 
+  margin: auto;
+  border-style : hidden!important;
+}
+
+thead th {
+  /* determining a different font for the titles */
+  font-family:'Franklin Gothic Medium';
+  background-color: #d6a95a;
 }
 
 th, td {
   padding: 15px;
   text-align: center;
 }
+
+table, tr, td {
+  border: 1px inset black;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* the 'titles' */
+th {
+  letter-spacing: 3px;
+}
+/* the content */
+td {
+  letter-spacing: 1px;
+}
+
+/* zebra striping */
+tbody tr:nth-child(odd) {
+  background-color: #f9f5ea;
+}
+tbody tr:nth-child(even) {
+  background-color: #fffef7;
+}
+
+
 
 /* FOR THE NEW MESSAGE PAGE */
 #newentrycontainer {
