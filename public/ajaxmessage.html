@@ -15,6 +15,10 @@
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -24,43 +28,45 @@
             <a href="/newmessage" />New Entry</a>
             <a class="active" href="/ajaxmessage" />Ajax</a>
         </div>
-        
-        <div id="title">
-            <h1> AJAX Entry Form </h1>
+
+        <div id="paddingstuff">
+            <h1 id="title" style="color:#40413d;"> AJAX Entry Form </h1>
             <hr>
-            <h2> Want to leave a message to the backend?</h2>
-            <p id="alt-text"> Write your message in the form below and click submit
+            <h2 style="color:#40413d;"> Want to leave a message to the backend?</h2>
+            <p id="alt-text"> Write your message in the form below and click
+                submit
                 to see your message.</p>
-        </div>
-        <br />
-
-        <!-- THE GUESTBOOK ENTRY FORM -->
-        <div id="newentrycontainer2">
-            <h3>New AJAX Entry</h3>
-            <hr>
             <br />
 
-            <form id="ajax-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="username"
-                        name="username" placeholder="What's your name?">
-                </div>
-                <div class="form-group">
-                    <label for="country">Country</label>
-                    <input type="text" class="form-control" id="country"
-                        name="country" placeholder="Where are you from?">
-                </div>
-                <div class="form-group">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea required name="message" class="form-control"
-                        id="message"
-                        rows="3"></textarea>
-                </div>
-                <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
-            </form>
-            <div id="message-container"></div>
-            <br />
+            <!-- THE GUESTBOOK ENTRY FORM -->
+            <div id="newentrycontainer2">
+                <h3>New AJAX Entry</h3>
+                <hr>
+                <br />
+
+                <form id="ajax-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="username"
+                            name="username" placeholder="What's your name?">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country"
+                            name="country" placeholder="Where are you from?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea required name="message" class="form-control"
+                            id="message"
+                            rows="3"></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn
+                        btn-primary">Submit</button>
+                </form>
+                <div id="message-container"></div>
+                <br />
+            </div>
         </div>
 
         <!-- for Bootstrap: -->

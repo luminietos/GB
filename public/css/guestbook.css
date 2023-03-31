@@ -1,10 +1,13 @@
 body {
   margin: 0;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Baloo 2', cursive;
   padding-bottom: 50px;
 }
 #paddingstuff {
-  padding:20px;
+  padding-left:20px;
+  padding-right:25px;
+  padding-top:0px;
+  padding-bottom: 20px;
 }
 
 /* TEXT */
@@ -12,12 +15,23 @@ body {
 #fancy {
   font-family: 'Fasthand', cursive;
   padding-right: 5px;
-  font-size: 50px;
+  font-size: 70px;
+  letter-spacing: -2px;
+  color: #416050;
+}
+#fancy:hover {
+  font-weight: 550;
+  color:#be892a;
+  transition: 1s;
 }
 
 #title {
-  padding-left:16px; 
-  padding-top:15px;
+  padding-top: 50px;
+  padding-bottom: 35px;
+}
+
+h1, h2, h3, p {
+  color: #40413d
 }
 h1, h2, h3 {
   text-align: center;
@@ -28,13 +42,13 @@ h2 {
 #alt-text {
   text-align:center;
 }
+h1 {
+  font-family: 'Baloo 2', cursive;
+}
 
 /* IMAGES */
 
 img {
-  /* placement */
-  float: left;
-  /* sizing */ 
   margin-right: 15px;
   width: 15cm;
   height: 15cm;
@@ -45,6 +59,7 @@ img {
 .topnav {
   overflow: hidden;
   background-color: #333;
+
 }
 .topnav a {
   float: left;
@@ -56,11 +71,19 @@ img {
 }
 .topnav a:hover {
   background-color: #f2f2f2;
-  color: black;
+  color: #40413d;
 }
 .topnav a.active {
   background-color: #d6a95a;
   color: white;
+}
+
+.centered-item a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* THE TABLE */
@@ -93,7 +116,7 @@ th, td {
 }
 
 table, tr, td {
-  border: 1px inset black;
+  border: 1px inset #40413d;
   border-collapse: collapse;
   border-spacing: 0;
 }
