@@ -1,5 +1,5 @@
 {
-  "name": "gbrender",
+  "name": "guestbook",
   "version": "1.0.0",
   "description": "gbrender",
   "main": "index.js",
@@ -27,5 +27,6 @@
     "mongoose": "^7.0.3",
     "mysql": "^2.18.1",
     "sails": "^1.5.4"
-  }
+  },
+  "devDependencies": {}
 }
