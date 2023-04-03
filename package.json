@@ -1,0 +1,24 @@
+{
+  "name": "gbrender",
+  "version": "1.0.0",
+  "description": "gbrender",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luminietos/GB.git"
+  },
+  "keywords": [
+    "render",
+    "node.js"
+  ],
+  "author": "Wilma Paloheimo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luminietos/GB/issues"
+  },
+  "homepage": "https://github.com/luminietos/GB#readme"
+}
