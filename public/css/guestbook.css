@@ -112,12 +112,12 @@ img {
 table {
   table-layout: auto;
   width: 100%;
-  /* border: 1px;
-  border-collapse: collapse; */
+  /* border-collapse: collapse; */
   margin: auto;
   /* border-style: hidden !important; */
   width: 300px;
   height: 200px;
+  margin-bottom: 80px;
 }
 
 thead th {
