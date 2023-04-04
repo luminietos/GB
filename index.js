@@ -17,10 +17,10 @@ app.use(express.static("public"));
 // THE LANDING PAGE
 app.get("/", function (_req, res) {
   // redirecting page to index html file
-  res.sendFile(path.join(__dirname + '/public/index.html'));
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-// THE GUESTBOOK PAGE
+// THE GUESTBOOK TABLE PAGE
 app.get("/guestbook", (_req, res) => {
   fs.readFile("jsondata.json", (err, data) => {
     if (err) {
@@ -40,7 +40,7 @@ app.get("/guestbook", (_req, res) => {
 
 // THE NEW ENTRY aka NEW MESSAGE PAGE
 app.get("/newmessage", function (_req, res) {
-  res.sendFile(__dirname + "/public/newmessage.html");
+  res.sendFile(__dirname + "/newmessage.html");
 });
 
 // handles the post request
@@ -76,7 +76,7 @@ app.post("/newmessage", function (req, res) {
 
 // THE AJAX MESSAGE PAGE 
 app.get("/ajaxmessage", function (_req, res) {
-  res.sendFile(__dirname + "/public/ajaxmessage.html");
+  res.sendFile(__dirname + "/ajaxmessage.html");
 });
 
 // THE ERROR FUNCTION
