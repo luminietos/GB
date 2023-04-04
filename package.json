@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "start": "node /public/index.js"
   },
   "repository": {
@@ -20,13 +23,13 @@
   "bugs": {
     "url": "https://github.com/luminietos/GB/issues"
   },
-  "homepage": "https://github.com/luminietos/GB#readme",
+  "homepage": "https://luminietos.github.io/GB/",
   "dependencies": {
     "express": "^4.18.2",
+    "gh-pages": "^5.0.0",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.3",
     "mysql": "^2.18.1",
     "sails": "^1.5.4"
-  },
-  "devDependencies": {}
+  }
 }
