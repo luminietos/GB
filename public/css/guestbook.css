@@ -3,11 +3,13 @@ body {
   font-family: 'Baloo 2', cursive;
   padding-bottom: 50px;
 }
+
 #paddingstuff {
-  padding-left:20px;
-  padding-right:25px;
-  padding-top:0px;
+  padding-left: 20px;
+  padding-right: 25px;
+  padding-top: 5px;
   padding-bottom: 20px;
+  background-color:#fffef8;
 }
 
 /* TEXT */
@@ -15,43 +17,52 @@ body {
 #fancy {
   font-family: 'Fasthand', cursive;
   padding-right: 5px;
-  font-size: 70px;
-  letter-spacing: -2px;
+  font-size: 50px;
   color: #416050;
 }
+
 #fancy:hover {
   font-weight: 550;
-  color:#be892a;
+  color: #be892a;
   transition: 1s;
 }
 
 #title {
-  padding-top: 50px;
-  padding-bottom: 35px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium';
 }
 
 h1, h2, h3, p {
   color: #40413d
 }
+
 h1, h2, h3 {
   text-align: center;
+}
+
+h1 {
+  font-family: 'Baloo 2', cursive;
 }
 h2 {
   padding: 20px;
 }
+
 #alt-text {
-  text-align:center;
+  text-align: center;
 }
-h1 {
-  font-family: 'Baloo 2', cursive;
+
+p {
+  font-size: 12px;
 }
 
 /* IMAGES */
 
 img {
   margin-right: 15px;
-  width: 15cm;
-  height: 15cm;
+  width: 10cm;
+  height: 10cm;
 }
 
 /* NAVBAR */
@@ -61,18 +72,21 @@ img {
   background-color: #333;
 
 }
+
 .topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
 }
+
 .topnav a:hover {
   background-color: #f2f2f2;
   color: #40413d;
 }
+
 .topnav a.active {
   background-color: #d6a95a;
   color: white;
@@ -89,8 +103,8 @@ img {
 /* THE TABLE */
 
 #tablediv {
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 70%;
   overflow: auto;
 }
@@ -98,15 +112,17 @@ img {
 table {
   table-layout: auto;
   width: 100%;
-  border: none; 
-  border-collapse: collapse; 
+  /* border: 1px;
+  border-collapse: collapse; */
   margin: auto;
-  border-style : hidden!important;
+  /* border-style: hidden !important; */
+  width: 300px;
+  height: 200px;
 }
 
 thead th {
   /* determining a different font for the titles */
-  font-family:'Franklin Gothic Medium';
+  font-family: 'Franklin Gothic Medium';
   background-color: #d6a95a;
 }
 
@@ -121,11 +137,20 @@ table, tr, td {
   border-spacing: 0;
 }
 
+#tr {
+  font-size: 15px;
+}
+
 /* the 'titles' */
 th {
   letter-spacing: 3px;
+  font-size: 10px;
 }
+
 /* the content */
+#tbody {
+  font-size: 10px;
+}
 td {
   letter-spacing: 1px;
 }
@@ -134,6 +159,7 @@ td {
 tbody tr:nth-child(odd) {
   background-color: #f9f5ea;
 }
+
 tbody tr:nth-child(even) {
   background-color: #fffef7;
 }
@@ -145,13 +171,14 @@ tbody tr:nth-child(even) {
   /*NOTE TO SELF: no max. height bc there's also*/
   /*no max. number of items listed - can be as long as needed!!*/
   background-color: #ffefcc;
-
+  
   margin: auto;
   text-align: center;
   align-items: center;
 
-  min-width: 500px;
-  min-height: 100px;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 1000px;
 
   width: 50%;
   top: 50%;
@@ -162,6 +189,7 @@ tbody tr:nth-child(even) {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 /* FOR THE AJAX PAGE */
 #newentrycontainer2 {
   /*NOTE TO SELF: no max. height bc there's also*/
@@ -172,8 +200,9 @@ tbody tr:nth-child(even) {
   text-align: center;
   align-items: center;
 
-  min-width: 500px;
-  min-height: 100px;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 1000px;
 
   width: 50%;
   top: 50%;
@@ -185,7 +214,20 @@ tbody tr:nth-child(even) {
   padding-right: 20px;
 }
 
+#label {
+  color:#d6a95a;
+}
+
 /* input field styling */
+
+input {
+  width: 50%;
+}
+
+#country, #username, #message {
+  font-size: 12px;
+  font-style: italic;
+}
 
 input[type=text], select {
   width: 100%;
@@ -210,4 +252,19 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #bc9146;
+}
+
+/* submit button */
+#submit {
+  border-radius: 5cm;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+  border: none;
+  background-color: #d3a452;
+}
+
+#submit:hover {
+  background-color:#986b19;
+  transition: all 0.7s ease-in-out;
 }

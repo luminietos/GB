@@ -40,16 +40,16 @@
       <a href="/ajaxmessage" />Ajax</a>
     </div>
     <div id="paddingstuff">
-      <h1 id="title" style="color:#40413d;"> Guestbook </h1>
+      <h1 id="title" style="color:#416050;"> Guestbook </h1>
       <hr>
-      <h2 style="color:#40413d;">View messages left by past visitors.</h2>
+      <h2 style="color:#40413d; font-size: 20px;">View messages left by past visitors.</h2>
       <p id="alt-text">If you want to leave a message of your own, <br> you can find
         our message entry form in
         <a href="./newmessage" /> the New Entry page</a>.</p>
 
       <table class="pure-table pure-table-horizontal" id="tablediv">
         <thead>
-          <tr class="text-center">
+          <tr class="text-center" id="tr">
             <!-- <th>ID</th> -->
             <th>Username</th>
             <th>Country</th>
@@ -57,7 +57,7 @@
             <th>Message</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
           <% for (let i= 0; i <data.length; i++) { %>
             <tr>
               <!-- <td><%=data[i].id %></td> -->

@@ -35,9 +35,9 @@
         </div>
 
         <div id="paddingstuff">
-            <h1 id="title" style="color:#40413d;"> AJAX Form </h1>
+            <h1 id="title" style="color:#416050;"> AJAX Form </h1>
             <hr>
-            <h2 style="color:#40413d;"> Want to leave a message to the backend?</h2>
+            <h2 style="color:#40413d; font-size: 20px;"> Want to leave a message to the backend?</h2>
             <p id="alt-text"> Write your message in the form below and click
                 submit
                 to see your message.</p>
@@ -45,23 +45,23 @@
 
             <!-- THE GUESTBOOK ENTRY FORM -->
             <div id="newentrycontainer2">
-                <h3>New AJAX Entry</h3>
+                <h3 style="font-size: 18px; color:#d6a95a; font-family: 'Franklin Gothic Medium';">New AJAX Entry</h3>
                 <hr>
                 <br />
 
                 <form id="ajax-form">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name" id="label">Name</label>
                         <input type="text" class="form-control" id="username"
                             name="username" placeholder="What's your name?">
                     </div>
                     <div class="form-group">
-                        <label for="country">Country</label>
+                        <label for="country" id="label">Country</label>
                         <input type="text" class="form-control" id="country"
                             name="country" placeholder="Where are you from?">
                     </div>
                     <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
+                        <label for="message" class="form-label" id="label">Message</label>
                         <textarea required name="message" class="form-control"
                             id="message"
                             rows="3"></textarea>

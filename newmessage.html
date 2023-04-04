@@ -30,9 +30,9 @@
         </div>
 
         <div id="paddingstuff">
-                <h1 id="title" style="color:#40413d;"> New Guestbook Entry </h1>
+                <h1 id="title" style="color:#416050;"> New Guestbook Entry </h1>
                 <hr>
-                <h2 style="color:#40413d;">Hi! Want to leave a message to our guestbook?</h2>
+                <h2 style="color:#40413d; font-size: 20px;">Hi! Want to leave a message to our guestbook?</h2>
                 <p id="alt-text">Type your message down below, and hit send to see your message in
                     <a href="./guestbook" />the Guestbook
                         page</a>.</p>
@@ -40,29 +40,29 @@
     
             <!-- THE GUESTBOOK ENTRY FORM -->
             <div id="newentrycontainer">
-                <h3>New Guestbook Entry</h3>
+                <h3 style="font-size: 18px; color:#d6a95a; font-family: 'Franklin Gothic Medium';">New Guestbook Entry</h3>
                 <hr>
                 <br />
     
                 <form action="/newmessage" method="POST">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name" id="label">Name</label>
                         <input type="text" class="form-control" id="username"
                             name="username" placeholder="What's your name?">
                     </div>
                     <div class="form-group">
-                        <label for="country">Country</label>
+                        <label for="country" id="label">Country</label>
                         <input type="text" class="form-control" id="country"
                             name="country" placeholder="Where are you from?">
                     </div>
                     
                     <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
+                        <label for="message" class="form-label" id="label">Message</label>
                         <textarea required name="message" class="form-control"
                             id="message"
                             rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                 </form>
                 <br />
             </div>
