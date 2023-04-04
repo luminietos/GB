@@ -1,5 +1,5 @@
 {
-  "name": "guestbook",
+  "name": "node-gb",
   "version": "1.0.0",
   "description": "gbrender",
   "main": "index.js",
