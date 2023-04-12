@@ -8,7 +8,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "start": "node /public/index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
