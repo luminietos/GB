@@ -11,7 +11,7 @@
     "start": "node index.js"
   },
   "engines": {
-    "NODE_VERSION": "16.17.0"
+    "node": ">=14.20.1"
   },
   "repository": {
     "type": "git",
