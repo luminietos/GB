@@ -23,7 +23,7 @@ The 'Ajax' page displays a similar form, with the only difference being that rat
 This is one of the three projects I created for my University's Full Stack course. The purpose of creating this guestbook was to better learn and understand things like creating web servers, routing, and Node.js development. 
 
 ## Status
-The development of this project is ongoing.
+The development of this project is complete for the foreseeable future.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
