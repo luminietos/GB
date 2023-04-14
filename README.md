@@ -18,9 +18,15 @@ The 'Guestbook' page is the page that holds all the guestbook entries left by pr
 
 (Note: the the original dummy data's dates are formatted differently from the entries that have been created from my entry form and pushed to the JSON file holding the guestbook data. I tried changing the old dates to match my new, arguably more clear formatting, but when I did that the new dates showed up as inherently invalid, so they remain unchanged.)  
 
+![p1 gbpage](https://user-images.githubusercontent.com/77718358/232028203-7c8888eb-9791-4fa1-bd3e-3e58070f4990.jpg)
+
 The 'New Entry' page, as the name suggests, is the home of an entry form. This form (titled "New Guestbook Entry") asks the user to input a name, country, and message for the guestbook. The form will not be submitted, if one of these three fields is empty. Once fields are filled and the submit button is pressed, the user data is pushed to the guestbook user entries' JSON file, which in turn is linked to the aforementioned table that displays all user entries. The user, upon submitting the form, is automatically sent to the Guestbook page, where they can see their own entry as a new row in the table of past users' guestbook messages.
 
+![p1 newentry mobile view](https://user-images.githubusercontent.com/77718358/232028286-c3028076-3076-40a2-826b-0ad431a9878e.jpg)
+
 The 'Ajax' page displays a similar form, with the only difference being that rather than the submit button posting the form, it runs a JS code that collects the user input data and sends it to the backend as an AJAX-call and shows all the messages as a response to the page under the form itself. If there's an error, the form displays the text 'An error occured'. 
+
+![p1 ajax mobile view](https://user-images.githubusercontent.com/77718358/232028423-8b5223ae-e0f4-45ce-8dfb-9a621fedbe22.jpg)
 
 ## Purpose
 This is one of the three projects I created for my University's Full Stack course. The purpose of creating this guestbook was to better learn and understand things like creating web servers, routing, and Node.js development. 
