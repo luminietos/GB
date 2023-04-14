@@ -9,6 +9,9 @@ It was made using and utilizing JavaScript, JSON, Node.js, [Express](https://exp
 You can find this project's site by clicking [here](https://luminietos.github.io/GB/) (GitHub) or [here](https://gb-lumi-ykfe.onrender.com/) (Render).
 
 ## Step-by-step guide - *"How do I actually use this site?"*
+
+![p1 homepage](https://user-images.githubusercontent.com/77718358/232026098-5cb29b00-a5dc-46b7-ab7d-2a323b3d99b8.jpg)
+
 Once you've navigated to the site, you'll find yourself on the main landing page - 'Home'. From there— and, indeed, from any page— you can navigate to any of the other three pages (guestbook, new entry, ajax) in the navigation bar.
 
 The 'Guestbook' page is the page that holds all the guestbook entries left by previous users. It holds a table with the name, country, and message of the user's message, as well as the date of the new message's original entry. 
