@@ -6,7 +6,7 @@ This is a guestbook application created in March 2023.
 
 It was made using and utilizing JavaScript, JSON, Node.js, [Express](https://expressjs.com/), and a bit of EJS, HTML and CSS alongisde the [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) and [Pure.css](https://purecss.io/) libraries (for styling and layout purposes). 
 
-You can find this project's site by clicking [here](https://luminietos.github.io/GB/) (GitHub) or [here](https://gb-lumi-ykfe.onrender.com/) (Azure).
+You can find this project's site by clicking [here](https://luminietos.github.io/GB/) (GitHub) or [here](https://gb-lumi-ykfe.onrender.com/) (Render).
 
 ## Step-by-step guide - *"How do I actually use this site?"*
 Once you've navigated to the site, you'll find yourself on the main landing page - 'Home'. From there— and, indeed, from any page— you can navigate to any of the other three pages (guestbook, new entry, ajax) in the navigation bar.
