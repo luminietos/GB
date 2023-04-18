@@ -3,7 +3,7 @@ const app = express();
 const fs = require("fs");
 const bodyParser = require("body-parser");
 const path = require('path');
-const port = 5000;
+// var port = 5000;
 
 // FOR EJS
 app.set("view engine","ejs");
@@ -85,6 +85,11 @@ app.get("*", function (_req, res) {
 });
 
 // PORT
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });
+
+var PORT = process.env.PORT || 5000;
+app.listen(PORT, function () {
+  console.log("Guestbook is listening on PORT %d", PORT);
 });
