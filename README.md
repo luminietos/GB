@@ -32,9 +32,9 @@ The 'Ajax' page displays a similar form, with the only difference being that rat
 This is one of the three projects I created for my University's Full Stack course. The purpose of creating this guestbook was to better learn and understand things like creating web servers, routing, and Node.js development. 
 
 ### AKA 
-P1: [Guestbook](https://github.com/luminietos/GB)
-P2: [REST API (no UI)](https://github.com/luminietos/REST-API)
-P3: [the REST API's UI/front-end](https://github.com/luminietos/REST-API)
+P1: [Guestbook](https://github.com/luminietos/GB) \
+P2: [REST API (no UI)](https://github.com/luminietos/REST-API) \
+P3: [the REST API's UI/front-end](https://github.com/luminietos/REST-API) 
 
 ## Status
 The development of this project is complete for the foreseeable future.
