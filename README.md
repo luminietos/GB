@@ -18,7 +18,7 @@ The 'Guestbook' page is the page that holds all the guestbook entries left by pr
 
 (Note: the the original dummy data's dates are formatted differently from the entries that have been created from my entry form and pushed to the JSON file holding the guestbook data. I tried changing the old dates to match my new, arguably more clear formatting, but when I did that the new dates showed up as inherently invalid, so they remain unchanged.)  
 
-![p1 gbpagefix](https://user-images.githubusercontent.com/77718358/233080247-4e1a4844-6960-4385-ab31-df9db589445e.jpg)
+![p1 gbpagefix smaller](https://user-images.githubusercontent.com/77718358/233082184-e9ee6d7f-8e72-49b3-8aa2-0d76b70f1272.jpg)
 
 The 'New Entry' page, as the name suggests, is the home of an entry form. This form (titled "New Guestbook Entry") asks the user to input a name, country, and message for the guestbook. The form will not be submitted, if one of these three fields is empty. Once fields are filled and the submit button is pressed, the user data is pushed to the guestbook user entries' JSON file, which in turn is linked to the aforementioned table that displays all user entries. The user, upon submitting the form, is automatically sent to the Guestbook page, where they can see their own entry as a new row in the table of past users' guestbook messages.
 
