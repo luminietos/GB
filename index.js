@@ -33,6 +33,7 @@ app.get("/guestbook", (_req, res) => {
     var tableData = {
       data: jsonData,
   };
+  // gets the 'index.ejs' file from the 'pages' subfolder
     res.render("./pages/index",tableData);
     //res.send(results);
   });
@@ -52,6 +53,7 @@ app.post("/newmessage", function (req, res) {
     weekday:"long", 
     year:"numeric", 
     month:"long", 
+    day:"numeric", //the date, e.g. "April 18"
     hour:"numeric", 
     minute:"numeric" };
   formData.date = new Date().toLocaleDateString('en-us', options);
