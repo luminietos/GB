@@ -86,11 +86,6 @@ app.get("*", function (_req, res) {
   res.status(404).send("Can't find requested page");
 });
 
-// PORT
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
-
 var PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {
   console.log("Guestbook is listening on PORT %d", PORT);
