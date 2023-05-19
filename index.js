@@ -18,6 +18,11 @@ const publicPath = path.join(__dirname, "public");
 app.use(express.static(publicPath));
 
 
+// purely for dev/testing purposes
+app.get("/testcss", function (_req, res) {
+  res.sendFile(path.join(__dirname, "/public/css/guestbook.css"));
+});
+
 // THE LANDING PAGE
 app.get("/", function (_req, res) {
   // redirecting page to index html file
