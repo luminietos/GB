@@ -11,7 +11,11 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(bodyParser.json());
 
-app.use(express.static("public"));
+
+// SERVING STATIC FILES
+// app.use(express.static("public"));
+const publicPath = path.join(__dirname, "public");
+app.use(express.static(publicPath));
 
 
 // THE LANDING PAGE
