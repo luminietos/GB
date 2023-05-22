@@ -57,7 +57,7 @@ p {
   font-size: 12px;
 }
 
-/* IMAGES */
+/* IMAGE/S */
 
 img {
   margin-right: 15px;
@@ -65,7 +65,7 @@ img {
   height: 8.5cm;
 }
 
-/* NAVBAR */
+/* THE NAVBAR */
 
 .topnav {
   overflow: hidden;
@@ -102,27 +102,21 @@ img {
 
 /* THE TABLE */
 
-#tablediv {
+#tablediv, #table-div { /* <table>'s id and id of the <div> around <table> */
   table-layout: auto;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
   overflow: auto;
+
+  /* subtracting the padding of the #paddingstuff element */
+  max-width: calc(100% - 32px);
+  min-width: 200px;
 }
 @media (max-width: 700px) {
-  #tablediv {
-      max-width: 100%;
+  #tablediv, #table-div {
+    max-width: 100%;
   }
 }
-
-
-/* table {
-  table-layout: auto;
-  width: 100%;
-  margin: auto;
-  height: 200px;
-  margin-bottom: 80px;
-} */
 
 thead th {
   /* determining a different font for the titles */
