@@ -26,7 +26,8 @@ app.get("/testcss", function (_req, res) {
 // THE LANDING PAGE
 app.get("/", function (_req, res) {
   // redirecting page to index html file
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(__dirname + "/index.html");
+  // res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 // THE GUESTBOOK TABLE PAGE
@@ -50,6 +51,7 @@ app.get("/guestbook", (_req, res) => {
 
 // THE NEW ENTRY aka NEW MESSAGE PAGE
 app.get("/newmessage", function (_req, res) {
+  // res.sendFile(__dirname + "/newmessage.html");
   res.sendFile(__dirname + "/newmessage.html");
 });
 
@@ -87,7 +89,8 @@ app.post("/newmessage", function (req, res) {
 
 // THE AJAX MESSAGE PAGE 
 app.get("/ajaxmessage", function (_req, res) {
-  res.sendFile(__dirname + "/ajaxmessage.html");
+  // res.sendFile(__dirname + "/ajaxmessage.html");
+  res.sendFile(path.join(__dirname, "/ajaxmessage.html"));
 });
 
 // THE ERROR FUNCTION
