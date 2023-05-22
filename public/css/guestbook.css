@@ -103,22 +103,26 @@ img {
 /* THE TABLE */
 
 #tablediv {
+  table-layout: auto;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
   overflow: auto;
 }
+@media (max-width: 700px) {
+  #tablediv {
+      max-width: 100%;
+  }
+}
 
-table {
+
+/* table {
   table-layout: auto;
   width: 100%;
-  /* border-collapse: collapse; */
   margin: auto;
-  /* border-style: hidden !important; */
-  width: 300px;
   height: 200px;
   margin-bottom: 80px;
-}
+} */
 
 thead th {
   /* determining a different font for the titles */

@@ -18,7 +18,7 @@ const publicPath = path.join(__dirname, "public");
 app.use(express.static(publicPath));
 
 
-// purely for dev/testing purposes
+// purely for dev/testing purposes!! ignore this<3
 app.get("/testcss", function (_req, res) {
   res.sendFile(path.join(__dirname, "/public/css/guestbook.css"));
 });
