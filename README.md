@@ -1,12 +1,12 @@
 # "GB" Guestbook - Node.js project
-[A Node.js guestbook application](gb-lumi-ykfe.onrender.com/), that allows all visitors of the website to leave a public comment without any sort of user registration.
+[A Node.js guestbook application](https://gb-lumi-ykfe.onrender.com/), that allows all visitors of the website to leave a public comment without any sort of user registration.
 
 ## Description
 This is a guestbook application created in March 2023. 
 
 It was made using and utilizing JavaScript, JSON, Node.js, [Express](https://expressjs.com/), and a bit of EJS, HTML and CSS alongisde the [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) and [Pure.css](https://purecss.io/) libraries (for styling and layout purposes). 
 
-You can find this project's site by clicking [here](https://luminietos.github.io/GB/) (GitHub) or [here](gb-lumi-ykfe.onrender.com/) (Render).
+You can find this project's site by clicking [here](https://luminietos.github.io/GB/) (GitHub) or [here](https://gb-lumi-ykfe.onrender.com/) (Render).
 
 ## Step-by-step guide - *"How do I actually use this site?"*
 
